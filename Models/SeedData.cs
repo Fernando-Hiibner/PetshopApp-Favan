@@ -73,24 +73,24 @@ namespace PetshopApp.Models
                             Nome="Ração 10Kg",
                             Descricao="Ração da melhor qualidade para seu Pet.",
                             QuantidadeEstoque=13,
-                            PrecoCompra=40.0f,
-                            PrecoVenda=59.99f
+                            PrecoCompra=40.0,
+                            PrecoVenda=59.99
                         },
                         new Produto
                         {
                             Nome="Ração 5kg",
                             Descricao="Ração da melhor qualidade para seu Pet.",
                             QuantidadeEstoque=5,
-                            PrecoCompra=20.0f,
-                            PrecoVenda=29.99f
+                            PrecoCompra=20.0,
+                            PrecoVenda=29.99
                         },
                         new Produto
                         {
                             Nome="Ração 1Kg",
                             Descricao="Ração da melhor qualidade para seu Pet.",
                             QuantidadeEstoque=37,
-                            PrecoCompra=10.0f,
-                            PrecoVenda=13.99f
+                            PrecoCompra=10.0,
+                            PrecoVenda=13.99
                         }
                     );
                 }

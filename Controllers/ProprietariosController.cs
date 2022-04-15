@@ -20,9 +20,37 @@ namespace PetshopApp.Controllers
         }
 
         // GET: Proprietarios
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string type, string searchString)
         {
-            return View(await _context.Proprietario.ToListAsync());
+            var props = from p in _context.Proprietario
+                        select p;
+
+            switch(type)
+            {
+                case "Nome":
+                    if(!String.IsNullOrEmpty(searchString))
+                    {
+                        props = props.Where(s => s.Nome!.ToLower().Contains(searchString.ToLower()));
+                    }
+                    break;
+                case "Telefone":
+                    if(!String.IsNullOrEmpty(searchString))
+                    {
+                        props = props.Where(s => s.Telefone!.ToLower().Contains(searchString.ToLower()));
+                    }
+                    break;
+                case "Email":
+                    if(!String.IsNullOrEmpty(searchString))
+                    {
+                        props = props.Where(s => s.Email!.ToLower().Contains(searchString.ToLower()));
+                    }
+                    break;
+                default:
+                    // Faz nada
+                    break;
+            }
+
+            return View(await props.ToListAsync());
         }
 
         // GET: Proprietarios/Details/5
