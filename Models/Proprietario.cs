@@ -1,5 +1,6 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PetshopApp.Models
 {
@@ -20,5 +21,7 @@ namespace PetshopApp.Models
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         public DateTime DtNascimento {get; set;}
+
+        public virtual ICollection<Animal> Animais {get; set;}
     }
 }
