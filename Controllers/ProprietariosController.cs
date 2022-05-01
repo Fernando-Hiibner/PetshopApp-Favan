@@ -62,6 +62,7 @@ namespace PetshopApp.Controllers
             }
 
             var proprietario = await _context.Proprietario
+                .Include(p => p.Animais)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (proprietario == null)
             {

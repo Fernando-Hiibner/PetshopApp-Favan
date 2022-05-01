@@ -16,6 +16,7 @@ namespace PetshopApp.Models
         public string Sexo {get; set;}
         [Display(Name = "Espécie")]
         public string Especie {get; set;}
+        [Display(Name = "Proprietario")]
         public int ProprietarioId {get; set;}
 
         public virtual Proprietario Proprietario {get; set;}

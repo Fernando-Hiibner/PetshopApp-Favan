@@ -46,6 +46,24 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DtNascimento)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Animais)
+        </dt>
+        <dd class = "col-sm-10">
+            <div>
+                <ul style="background: rgba(0, 0, 0, 0.05); border: 1px solid #CCC; list-style: none; padding-left: 0px; max-height: 250px; overflow: auto;">
+                    @if(Model.Animais.Count() == 0) {
+                        <li>Esse proprietario não possui nenhum animal.</li>
+                    }
+                    else{
+                        @foreach (var animal in Model.Animais)
+                        {
+                            <li><a href="/Animal/Details/@animal.Id" target="_blank">@Html.DisplayFor(model => animal.Nome)</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </dd>
     </dl>
 </div>
 <div>

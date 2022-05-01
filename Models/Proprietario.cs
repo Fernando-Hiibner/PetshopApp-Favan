@@ -22,6 +22,7 @@ namespace PetshopApp.Models
         [DataType(DataType.Date)]
         public DateTime DtNascimento {get; set;}
 
+        [Display(Name = "Animais")]
         public virtual ICollection<Animal> Animais {get; set;}
     }
 }
